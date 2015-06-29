@@ -1,0 +1,36 @@
+<ion-view view-title="Accueil">
+  <ion-content class="padding">
+    <div class="row row-center" ng-show='signPannel'>
+      <div class="list">
+        <div class="item bar bar-header bar-calm">
+          <h1 class="title">Connexion</h1>
+        </div>
+        <label class="item item-input">
+          <span class="input-label">Pseudo</span>
+          <input type="text" ng-model='form1.username'>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Téléphone</span>
+          <input type="tel" ng-model='form1.mdp'>
+        </label>
+        <div class="button-bar">
+          <a class="button button-balanced" ng-click='createAccount()'>Créer compte</a>
+          <a class="button button-balanced" ng-click='logIn()'>Se connecter</a>
+        </div>
+      </div>
+    </div>
+    <div class="list" ng-hide='signPannel' >
+      <a class="item item-thumbnail-left" href="#" ng-repeat='restaurant in restaurants'>
+        <img ng-src="http://ruut.fr/web/img/{{restaurant.id}}/logo.png">
+        <h2>{{restaurant.nom}}</h2>
+        <p>{{restaurant.adresse}}</p>
+        <p>Ouvert de {{restaurant.ouverture}} à {{restaurant.fermeture}}</p>
+        <div class="button button-calm button-small" ng-click="openwin(restaurant.id)">
+          Commandez
+        </div>
+      </a>
+        
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
